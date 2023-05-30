@@ -74,3 +74,35 @@ Exemplo de resposta:
 err: "Credenciais inválidas!"
 }
 ```
+
+### GET /games/:id
+Esse endpoint é responsável por mostrar 1 game disponivel no banco de dados.
+#### Parametros
+id: identifica o jogo que será pesquisado
+#### Respostas
+##### OK 200
+Caso essa resposta aconteça você vai receber 1 game.
+Exemplo de resposta:
+```
+{
+    "id": 2,
+    "title": "Minecraft",
+    "year": 2012,
+    "price": 20
+}
+```
+
+##### Não tem o game  404
+Caso essa resposta aconteça significa que o jogo não está presente no banco de dadosNot Found
+Motivos: Jogo não cadastrado.
+Exemplo de resposta:
+```
+Not Found
+```
+##### Erro de sintaxe  400
+Caso essa resposta aconteça significa que houve um erro de sintaxe.
+Motivos: usuário passou uma string em vez de passar um número.
+Exemplo de resposta:
+```
+Bad Request
+```
